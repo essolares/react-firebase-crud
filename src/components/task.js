@@ -1,6 +1,8 @@
 import React from 'react';
 import firebase from '../services/firebase';
 import '../App.css';
+import Button from 'react-bootstrap/Button'
+
 
 export default function Task({ task }) {
 
@@ -17,10 +19,11 @@ export default function Task({ task }) {
       };
     
   return (
+    
     <div>
       <h1 className={task.complete ? 'complete' : ''}>{task.title}</h1>
-      <button onClick={deleteTask}>Delete</button>
-      <button onClick={completeTask}>Complete</button>
+      <Button variant="outline-danger" onClick={deleteTask}>Delete</Button>
+      <Button variant="outline-success" onClick={completeTask}>Complete</Button>
     </div>
   );
 }
